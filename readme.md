@@ -27,10 +27,14 @@
   
 </style>
 Exemplo de tabela:
-| Sufixo | Rota | Método |
----------|------|----------
-|/app|x|<get/>|
-|/api|x|<post/>|
-|/api|x|<put/>|
-|/api|x|<delete/>|
+| Sufixo | Rota | Método | Descrição |
+---------|------|--------|------ 
+|`/app`|`/update`|<get/>|  Realiza a atualização assíncrona dos dados das redes sociais.  |
+|`/api/twitter/`|`/`|<get/>| |
+|`/api/twitter`|`/`|<get/>| |
+|`/api/linkedin`|`/`|<get/>| |
+|`/api/linkedin`|`/`|<get/>| |
+|`/api`|`/`|<post/>| |
+|`/api`|`/`|<put/>| |
+|`/api`|`/`|<delete/>| |
 
