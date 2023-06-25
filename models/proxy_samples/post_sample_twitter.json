@@ -1,0 +1,16 @@
+{
+  "id": "1234567890",
+  "text": "Conteúdo da postagem no Twitter",
+  "created_at": "2023-06-13T10:30:00Z",
+  "author": {
+    "id": "987654321",
+    "name": "Nome do autor",
+    "username": "nomeusuario",
+    "followers_count": 10000
+  },
+  "metrics": {
+    "favorite_count": 50,
+    "retweet_count": 20,
+    "reply_count": 30 //Não disponivel para o plano gratuito
+  }
+}

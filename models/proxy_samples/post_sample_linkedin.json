@@ -1,0 +1,18 @@
+{
+  "id": "1234567890",
+  "text": "Conteúdo da postagem no LinkedIn",
+  "created_at": "2023-06-13T10:30:00Z",
+  "author": {
+    "id": "987654321",
+    "name": "Nome do autor",
+    "username": "nomeusuario",
+    "followers_count": 5000
+  },
+  "metrics": {
+    "impressions": 1000,
+    "clicks": 50,
+    "likes": 20,
+    "comments": 10,
+    "shares": 5
+  }
+},

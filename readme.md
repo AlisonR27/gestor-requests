@@ -29,7 +29,7 @@
 Exemplo de tabela:
 | Sufixo | Rota | Método | Descrição |
 ---------|------|--------|------ 
-|`/app`|`/update`|<get/>|  Realiza a atualização assíncrona dos dados das redes sociais.  |
+|`/app`|`/update`|<get/>|  Realiza a atualização assíncrona dos dados das redes sociais. (A mesma que é executada todo dia as 2 da manhã)  |
 |`/api/twitter/`|`/`|<get/>| |
 |`/api/twitter`|`/`|<get/>| |
 |`/api/linkedin`|`/`|<get/>| |
@@ -37,4 +37,6 @@ Exemplo de tabela:
 |`/api`|`/`|<post/>| |
 |`/api`|`/`|<put/>| |
 |`/api`|`/`|<delete/>| |
+|`/frontend/2`|'/'|<put>
 
+Modelo de objetos usados para as redes sociais:
