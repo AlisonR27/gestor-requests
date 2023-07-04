@@ -1,4 +1,5 @@
 const { default: axios } = require("axios");
+require("../../routes/app/manager/index")
 
 exports.handleTwitterRequest = () => {
   console.log("Runnin Twitter Requests");
@@ -13,27 +14,17 @@ exports.handleTwitterRequest = () => {
   ).catch( err => {
     console.log(err);
   }).finally(() => {
-    axios.post(`${process.env.TWITTER_PROXY_URL}/twitter/multiple_posts`, {
-      posts: postsToQuery
-    }).then(response => {
-      if (response.status == 200) {
-        // Recebe os objetos das postagens
-        const parsedPostData = response.data;
-        for(const post of parsedPostData) {
-          // Realiza as requisições para o gestor BI inserir nos gráficos
-          axios.put(`${process.env.BI_MANAGER_URL}/${post.id}/`, post)
-            .then(
-              response => {
-                if (response.status != 201) { 
-                  console.log("Error in request, status: " + response.status);
-                }              
-              }
-            ).catch(exc => {
-              throw new Error();
-              console.log(exc);
-            })
+    for(const p of postsToQuery) {
+      axios.get(`${process.env.TWITTER_PROXY_URL}/post/${p.id}`).then(response => {
+        if (response.status == 200) {
+          // Recebe os objetos das postagens
+          const parsedPostData = response.data;
+          for(const post of parsedPostData) {
+            // Realiza as requisições para o gestor BI inserir nos gráficos
+            dailyPostUpdate(post.id, post);
+          }
         }
-      }
-    });
+      });
+    }
   });
 }
