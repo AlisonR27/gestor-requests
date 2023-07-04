@@ -1,5 +1,5 @@
 const schedule = require('node-schedule');
-const socialTasks = require("social_media")
+const socialTasks = require("./social_media/index")
 
 const scheduler = (cronitorInterval) => {
   schedule.scheduleJob(cronitorInterval, () => {

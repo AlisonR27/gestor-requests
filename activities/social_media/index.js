@@ -1,2 +1,1 @@
-exports.handleLinkedinRequest() = require("./linkedin");
-exports.handleTwitterRequest() = require("./twitter");
+exports.handleTwitterRequest = require("./twitter");

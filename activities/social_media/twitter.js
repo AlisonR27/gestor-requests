@@ -1,5 +1,5 @@
 const { default: axios } = require("axios");
-require("../../routes/app/manager/index")
+require("../../utils/app/manager/index")
 
 exports.handleTwitterRequest = () => {
   console.log("Runnin Twitter Requests");
