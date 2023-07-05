@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotas</title>
+  <style>
+    html, body {
+      margin: 0;
+      background-color: #0a100f;
+      color: white;
+    }
+    table *{
+      border: 1px solid white;
+    }
+    div p {
+      margin-top:0;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Rota
+        </th>
+        <th>
+          Método
+        </th>
+        <th>
+          Objetivo
+        </th>
+      </tr>
+    </thead>
+    <tbody id="router-table">
+
+    </tbody>
+  </table>
+  <script>
+    document.addEventListener("DOMContentLoaded", (e) => {
+      const tBody = document.querySelector('#router-table');
+      fetch('http://localhost:3000/routes/all').then(response => response.json().then(
+        parsedResponse => {
+          for (const route of parsedResponse) {
+            const {path, methods} = route.route;
+            console.log(route.route)
+            const availableMethodsArray = Object.entries(methods);
+            let methodsString = '';
+            availableMethodsArray.forEach(item => { if(methods[item]) methodsString += `<${item}/>` });
+            tBody.innerHTML += `<tr><td>${route.route.path}</td><td>${methodsString}</td><td>Lorem lorem</td></tr>`
+          }
+          console.log(parsedResponse)
+        }
+      ))
+    })
+  </script>
+</body>
+</html>
